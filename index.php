@@ -1,15 +1,48 @@
-<?php include __DIR__ . '/./db/database.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <title>Albums</title>
 
-<?php foreach($newJson as $arr){ ?>
+</head>
+<body>
+    <?php include __DIR__ . '/./db/database.php'; ?>
+    <style><?php include __DIR__ . '/./css/style.css'; ?></style>
+    
+    <main>
+        <div class="container">
+            <div class="row wrapper mx-auto py-5">
 
-    <?php foreach($arr as $arr2){ ?>
+                <!-- first foreach starts -->
+                <?php foreach($newJson as $arr){ ?>
 
-        <?php echo '<img src="' . $arr2["poster"] . '"/>'; ?>
-        
-        <h3><?php echo $arr2["title"]; ?></h3>
-        <p><?php echo $arr2["author"]; ?></p>
+                    <!-- second foreach starts -->
+                    <?php foreach($arr as $arr2){ ?>
+                        <div class="col-3 mx-auto">
 
-    <?php }; ?>
+                            <!-- echoing the elements -->
+                            <div class="img">
+                                <?php echo '<img src="' . $arr2["poster"] . '"/>'; ?>
+                            </div>
+                            <div>
+                                <h3><?php echo $arr2["title"]; ?></h3>
+                                <p><?php echo $arr2["author"]; ?></p>
+                            </div>
 
-<?php }; ?>
+                        </div>
 
+                    <!-- second foreach ends -->
+                    <?php }; ?>
+
+                <!-- first foreaach ends -->
+                <?php }; ?>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
