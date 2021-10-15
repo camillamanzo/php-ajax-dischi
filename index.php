@@ -4,7 +4,8 @@
 
     <?php foreach($arr as $arr2){ ?>
 
-        <img :src="<?php echo ($arr2["poster"]); ?>" :alt="record img">
+        <?php echo '<img src="' . $arr2["poster"] . '"/>'; ?>
+        
         <h3><?php echo $arr2["title"]; ?></h3>
         <p><?php echo $arr2["author"]; ?></p>
 
