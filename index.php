@@ -26,7 +26,7 @@
 
                             <!-- echoing the elements -->
                             <div class="img">
-                                <?php echo '<img src="' . $arr2["poster"] . '"/>'; ?>
+                                <img src="<?php echo $arr2["poster"]?>" alt="<?php echo $arr2["title"]?>">
                             </div>
                             <div>
                                 <h3><?php echo $arr2["title"]; ?></h3>
